@@ -1,0 +1,641 @@
+body {
+    background-color: #000000;
+    color: #555;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    /* Ensure footer is always at the bottom */
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'BHN Cinema';
+    src: url("/static/asset/fonts/BHN_CINEMA.TTF") format("truetype");
+}
+
+.navigator {
+    display: flex;
+    font-size: 1.5rem;
+    position: sticky;
+    top: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 999;
+}
+
+.nav-item-big {
+    font-family: 'Crimson Text';
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    color: #fff;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+.nav-item {
+    font-family: 'Crimson Text';
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    color: #fff;
+    border: 1px solid transparent;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    filter: blur(1px);
+}
+
+.nav-header {
+    padding: 1rem;
+    font-family: 'BHN Cinema';
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.nav-header:hover {
+    filter: blur(1px);
+}
+
+.video {
+    padding: 3rem;
+}
+
+.header {
+    width: 95%;
+    font-family: "BHN Cinema";
+    font-size: 7rem;
+    display: flex;
+    height: 60vh;
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding: 1rem 1rem;
+    text-align: center;
+    background: transparent;
+    filter: grayscale(50%);
+    background-size: 75vh 30vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: 95vh;
+    position: fixed;
+    overflow: hidden;
+    z-index: -1;
+    padding-bottom: 0;
+}
+
+#background-video {
+    width: 60%;
+    height: auto;
+    max-height: 70%;
+    padding-bottom: 10%;
+    z-index: -1;
+    filter: grayscale(50%);
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+*::selection {
+    color: #ddd;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 1.5);
+    background-color: transparent;
+}
+
+
+* {
+    outline: none;
+    border-width: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+.contact-logo {
+    text-decoration: none;
+    color: white;
+    width: 1.5rem;
+    height: auto;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    text-decoration: none;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    text-decoration: none;
+}
+
+.contact-logo:hover {
+    filter: blur(1px) grayscale(100%);
+    opacity: 0.8;
+}
+
+/* Designs the About page */
+.bio-container {
+    background-repeat: no-repeat;
+    background-size: 10rem auto;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    display: flex;
+    /* Enables flexbox */
+    align-items: center;
+    /* Vertically centers content */
+    justify-content: space-between;
+    /* Pushes children to edges */
+    gap: 2rem;
+    /* Adds space between the image and text */
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.bio-text {
+    margin-bottom: 2rem;
+    z-index: 2;
+    /* Ensure text stays above the images */
+    position: relative;
+}
+
+.bio-text h2 {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.bio-text p {
+    font-size: 1rem;
+    color: #888;
+}
+
+.bio-text a {
+    text-decoration: none;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.bio-text a:hover {
+    background: linear-gradient(45deg, #1ca591, #fff, #1ca591);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientHover 2s infinite linear;
+}
+
+.com-footer:hover {
+    background: linear-gradient(45deg, #1ca591, #fff, #1ca591);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientHover 2s infinite linear;
+    z-index: 99;
+}
+
+@keyframes gradientHover {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}
+
+/* Image container for random positions */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Set height for random positioning */
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Individual images */
+.image {
+    position: absolute;
+    /* Allow placement anywhere within the container */
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, top 0.3s ease, left 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+    filter: grayscale(100%);
+}
+
+/* Dim other images */
+.image:hover~.image {
+    opacity: 0.5;
+    /* Dim non-hovered images */
+}
+
+/* Set random positions for images */
+.image:nth-child(1) {
+    top: 50px;
+    left: 100px;
+}
+
+.image:nth-child(2) {
+    top: 200px;
+    left: 300px;
+}
+
+.image:nth-child(3) {
+    top: 100px;
+    left: 500px;
+}
+
+.image:nth-child(4) {
+    top: 300px;
+    left: 150px;
+}
+
+.image:nth-child(5) {
+    top: 400px;
+    left: 400px;
+}
+
+.image:nth-child(6) {
+    top: 200px;
+    left: 600px;
+}
+
+.bio-text {
+    margin-bottom: 2rem;
+}
+
+.bio-text h2 {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.bio-text p {
+    font-size: 1rem;
+    color: #888;
+}
+
+
+/* Full-size pop-up styling */
+.popup-image {
+    position: fixed;
+    background-size: contain;
+    /* Maintain aspect ratio */
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 999;
+    pointer-events: none;
+    /* Disable pointer interactions */
+}
+
+.bio-image {
+    flex: 0 0 auto;
+    /* Ensures the image stays its natural size */
+    max-width: 300px;
+    /* Limit image width */
+    /* Rounded corners */
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bio-image:hover {
+    animation: grayscaleTransition 1s infinite alternate;
+    box-shadow: -0.25rem 0.25rem 0.5rem 0.05rem rgba(255, 255, 255, 0.25)
+}
+
+@keyframes grayscaleTransition {
+    from {
+        filter: grayscale(100%);
+    }
+
+    to {
+        filter: grayscale(25%);
+    }
+}
+
+.bio-text {
+    max-width: 25rem;
+    /* Limit image width */
+    text-align: justify;
+    padding-left: 2rem;
+    text-decoration: none;
+    /* Adds space between the text and the image */
+}
+
+.bio-text h2,
+.bio-text p {
+    font-family: 'Crimson Text', serif;
+    line-height: 1.8;
+    color: #777;
+}
+
+.bio-text h2 {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.bio-text p {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* Foter section design */
+footer {
+    font-family: "Crimson Text", serif;
+    font-weight: 800;
+    font-style: italic;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    vertical-align: middle;
+    color: gray;
+    bottom: 0;
+    z-index: 0;
+}
+
+/* Thumbnail Styling */
+.thumbnail-container {
+    font-family: "Crimson Text", serif;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.thumbnail {
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.thumbnail:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnail img {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.thumbnail-content {
+    padding-left: 3rem;
+    flex: 1;
+}
+
+.thumbnail-header {
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ddd;
+    text-decoration: none;
+}
+
+.thumbnail-description {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+/* Masonry Grid Styling */
+.masonry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 equal-width columns */
+    padding: 1rem;
+}
+
+/* Individual Item Styling */
+.item img {
+    display: block;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Lightbox Overlay Styling */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styling */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+    transition: opacity 0.3s;
+}
+
+.close-btn:hover {
+    opacity: 0.7;
+}
+
+/* Loader Styling */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.loader-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Adjust size of the GIF */
+.loader-container img {
+    width: 10rem;
+    height: auto;
+}
+
+#sketch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* ===== Style Changes on Smaller Screen ===== */
+
+/* ===== Tablet Styles ===== */
+@media (max-width: 1200px) {
+    .masonry {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bio-container {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .bio-text {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header {
+        font-size: 5rem;
+        height: 50vh;
+        background-size: contain;
+        background-image: url(/static/asset/images/other/homebackground.jpg);
+    }
+
+    .thumbnail {
+        padding-bottom: 3rem;
+    }
+
+    .thumbnail img {
+        width: 200px;
+        height: 100px;
+    }
+
+    .thumbnail-content {
+        padding-left: 1.5rem;
+    }
+
+    .nav-header {
+        font-size: 1rem;
+        padding: 2rem;
+    }
+
+    #video-container {
+        padding-bottom: 10%;
+    }
+
+    #background-video {
+        display: none;
+    }
+
+}
+
+/* ===== Mobile Styles ===== */
+@media (max-width: 768px) {
+    .masonry {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .bio-container {
+        padding: 1rem;
+    }
+
+    .bio-text {
+        font-size: 0.8rem;
+    }
+
+    .header {
+        font-size: 3rem;
+        height: 40vh;
+        background-size: contain;
+        background-image: url(/static/asset/images/other/homebackground.jpg);
+    }
+
+    .image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .thumbnail {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2rem;
+    }
+
+    .thumbnail img {
+        width: 100%;
+        height: auto;
+    }
+
+    .thumbnail-content {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .nav-header {
+        font-size: 1rem;
+        padding: 2rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    #video-container {
+        padding-bottom: 10%;
+    }
+
+    #background-video {
+        display: none;
+    }
+}
