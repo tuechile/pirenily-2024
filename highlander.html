@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Pirenily | Collaborations</title>
+        <!-- Import necessary fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+        <link href="/pirenily-2024/static/favicon.ico" rel="icon">
+        <link href="/pirenily-2024/static/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <div class="loader-container">
+            <img src="/pirenily-2024/static/asset/images/other/loader.gif" alt="Loading...">
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <nav class="navigator">
+                <div class="nav-header">
+                    <a class="nav-header" href="/pirenily-2024/"> Pirenily </a>
+                </div>
+                <div class="nav-item-big">
+                    <a class="nav-item" href="about"> About </a>
+                    <a class="nav-item" href="collab"> Collaborative Work </a>
+                    <a class="nav-item" href="personal"> Personal Work </a>
+                    <a class="nav-item" href="client"> Commissions </a>
+                </div>
+            </nav>
+            
+<!--- Subnavigation page for displaying project --->
+    <div class="bio-container">
+        <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/KaJjkarMH6c?si=5TBXyoeuciBl_YaP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="bio-text" style="text-align:left;">
+            <h2 style="text-align:left;">MATCHA</h2>
+            <p>“Yasssssss, I’m finally back bro. Ohh look at that booty, didn’t expect it to be so big, my hair slays too. Wow, never happy to be a girl like now!”
+            </p>
+            <p>
+                An intimate friendship between two kindred spirits of Mike and Colleen was suddenly ruined, boiling down to an uneventful dispute about a rather petty subject. Full of hatred, Colleen herself made up a fiction with devastating occurrences to Mike. As a supernatural incident happened, Colleen had a chance to find her deepest sympathies with the incessant ups and downs in Mike’s life, changing her very perception of him and propelling her to make up with him. Yet even after becoming reconciled, they encountered arbitrary and tragic occurrences that make their own existence at stake…</p>
+        </div>
+
+        <div></div>
+    </div>
+    <div class="bio-container">
+        <div></div>
+        <image class="bio-image" style="filter:grayscale(0)" src="/pirenily-2024/static/asset/images/art direction/poster.jpg"></image>
+        <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/cqjCkyhlPkM?si=Y71W9A6Z8yVQtYVL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
+
+
+        </main>
+        <footer>
+            
+    <a href="https://www.instagram.com/chuoichuoibuoibuoi/" target="_blank" style="text-decoration: none">
+        <img src="/pirenily-2024/static/asset/images/other/ig.png" alt="Instagram" class="contact-logo">
+    </a>
+
+    <a href="mailto:nhomchuoicec@gmail.com" target="_blank" style="text-decoration: none">
+        <img src="/pirenily-2024/static/asset/images/other/mail.png" alt="Gmail" class="contact-logo">
+    </a>
+
+            <p></p>
+            Chi (Tue) Le | pirenily | Updated 2024
+        </footer>
+
+        <script>
+            // Script for the loader to load on every new page for at least 0.4s
+            document.addEventListener("DOMContentLoaded", () => {
+                const loader = document.querySelector('.loader-container');
+
+                function showLoader() {
+                    loader.classList.remove('hidden');
+                }
+
+                function hideLoader() {
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                    }, 400); // Minimum delay to show the loader
+                }
+
+                document.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const url = link.getAttribute('href');
+
+                        // Skip lightbox links
+                        if (link.classList.contains('lightbox')) {
+                            return; // Ignore loader for lightbox
+                        }
+
+                        // Check if the link is internal (same origin or relative URL)
+                        const isInternal = url && (url.startsWith('/') || url.startsWith(window.location.origin));
+
+                        if (isInternal) {
+                            showLoader();
+                        } else {
+                            e.preventDefault(); // Optional: prevent external links from triggering loader
+                            window.location.href = url; // Redirect to external site without showing the loader
+                        }
+                    });
+                });
+
+                // Hide the loader after the page fully loads
+                window.addEventListener('load', hideLoader);
+
+                // Reset the loader when navigating back
+                window.addEventListener('pageshow', (event) => {
+                    if (event.persisted) {
+                        loader.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>

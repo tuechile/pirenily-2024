@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Pirenily | Personal</title>
+        <!-- Import necessary fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+        <link href="/pirenily-2024/static/favicon.ico" rel="icon">
+        <link href="/pirenily-2024/static/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <div class="loader-container">
+            <img src="/pirenily-2024/static/asset/images/other/loader.gif" alt="Loading...">
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <nav class="navigator">
+                <div class="nav-header">
+                    <a class="nav-header" href="/pirenily-2024/"> Pirenily </a>
+                </div>
+                <div class="nav-item-big">
+                    <a class="nav-item" href="about"> About </a>
+                    <a class="nav-item" href="collab"> Collaborative Work </a>
+                    <a class="nav-item" href="personal"> Personal Work </a>
+                    <a class="nav-item" href="client"> Commissions </a>
+                </div>
+            </nav>
+            
+<!--- Subnavigation page for displaying project --->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+
+    <div id="sketch-container"></div>
+<!-- Import the script from Processing -->
+    <script>
+        let c = 0;
+        let f;
+        let d = 710;
+        let w = 750;
+        let h = 300;
+        let counter = 0;
+    // A mixture of English and Vietnamese text for random display
+        let textArray = ["Cute", "What\nthey\ndoing?", "Ew", "That's\nnot it...", "YES", "HELP", "Actually...", "BYE!", "tsk,\ntsk", "Ủa alo", "Im", "Thôi đi", "Để\nyên!", "Ơ hay", "Kinh\nvãi", "Ê Ê Ê", "BYEEEE", "Chịu\nluôn", "Chillax", "Ồ OK", "Shhhh", "Hả?", "Huh?", "Not\nthis.", "Chuyện!"];
+
+        function setup() {
+            let canvas = createCanvas(1000, 600);
+            canvas.parent("sketch-container"); // Attach the canvas to the div with ID "sketch-container"
+            background(255);
+            noStroke();
+
+        // Draw the background grid
+            for (let i = 200; i < width - 200; i += 25) {
+                for (let j = 50; j < height - 50; j += 25) {
+                    fill(c % 2 === 0 ? 190 : 230);
+                    c++;
+                    ellipse(i, j, 10, 10);
+                }
+                c++;
+            }
+
+        // Add the slogan
+            textAlign(LEFT, CENTER);
+            fill(0);
+            textSize(50);
+            text("MIND\nOTHERS'\nBUSINESS", 70, 400);
+        }
+
+        function draw() {
+        // Face
+            fill(200);
+            noStroke();
+            ellipse(w, 350, 300, 350);
+
+        // Eye
+            fill(255);
+            noStroke();
+            ellipse(w, h, 170, 70);
+
+        // Iris
+            fill(0);
+            noStroke();
+            ellipse(d, h, 100, 100);
+
+            if (d > 709 && d < 790) d += 2;
+            if (d === 790) d = 710;
+
+        // Eye stroke
+            noFill();
+            strokeWeight(20);
+            stroke(200);
+            ellipse(w, h, 170, 70);
+
+        // Mouth
+            rectMode(CENTER);
+            fill(100);
+            noStroke();
+            rect(w, 450, 150, 15);
+
+        // Thought bubble
+            fill(0);
+            noStroke();
+            ellipse(550, h, 50, 50);
+            ellipse(470, h - 40, 70, 70);
+            ellipse(560, h - 180, 270, 200);
+
+        // Thought text
+            fill(255);
+            textSize(50);
+            textAlign(CENTER, CENTER);
+            text(textArray[counter], 560, 120);
+        }
+
+        function keyPressed() {
+            counter = int(random(0, textArray.length));
+        }
+    </script>
+
+<!--- Spacer to maintain page length --->
+    <div class="spacer" style="padding-bottom: 77.5rem;"> </div>
+
+        </main>
+        <footer>
+            
+            <p></p>
+            Chi (Tue) Le | pirenily | Updated 2024
+        </footer>
+
+        <script>
+            // Script for the loader to load on every new page for at least 0.4s
+            document.addEventListener("DOMContentLoaded", () => {
+                const loader = document.querySelector('.loader-container');
+
+                function showLoader() {
+                    loader.classList.remove('hidden');
+                }
+
+                function hideLoader() {
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                    }, 400); // Minimum delay to show the loader
+                }
+
+                document.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const url = link.getAttribute('href');
+
+                        // Skip lightbox links
+                        if (link.classList.contains('lightbox')) {
+                            return; // Ignore loader for lightbox
+                        }
+
+                        // Check if the link is internal (same origin or relative URL)
+                        const isInternal = url && (url.startsWith('/') || url.startsWith(window.location.origin));
+
+                        if (isInternal) {
+                            showLoader();
+                        } else {
+                            e.preventDefault(); // Optional: prevent external links from triggering loader
+                            window.location.href = url; // Redirect to external site without showing the loader
+                        }
+                    });
+                });
+
+                // Hide the loader after the page fully loads
+                window.addEventListener('load', hideLoader);
+
+                // Reset the loader when navigating back
+                window.addEventListener('pageshow', (event) => {
+                    if (event.persisted) {
+                        loader.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>

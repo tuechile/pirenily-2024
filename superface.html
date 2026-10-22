@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Pirenily | Personal</title>
+        <!-- Import necessary fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+        <link href="/pirenily-2024/static/favicon.ico" rel="icon">
+        <link href="/pirenily-2024/static/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <div class="loader-container">
+            <img src="/pirenily-2024/static/asset/images/other/loader.gif" alt="Loading...">
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <nav class="navigator">
+                <div class="nav-header">
+                    <a class="nav-header" href="/pirenily-2024/"> Pirenily </a>
+                </div>
+                <div class="nav-item-big">
+                    <a class="nav-item" href="about"> About </a>
+                    <a class="nav-item" href="collab"> Collaborative Work </a>
+                    <a class="nav-item" href="personal"> Personal Work </a>
+                    <a class="nav-item" href="client"> Commissions </a>
+                </div>
+            </nav>
+            
+<!--- Subnavigation page for displaying project --->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        // Create lightbox elements
+            const lightboxOverlay = document.createElement("div");
+            lightboxOverlay.classList.add("lightbox-overlay");
+
+            const img = document.createElement("img");
+            lightboxOverlay.appendChild(img);
+
+            const closeBtn = document.createElement("span");
+            closeBtn.classList.add("close-btn");
+            closeBtn.innerHTML = "&times;";
+            lightboxOverlay.appendChild(closeBtn);
+
+        // Append the overlay to the document
+            document.body.appendChild(lightboxOverlay);
+
+        // Event: Open the lightbox
+            const lightboxLinks = document.querySelectorAll(".lightbox");
+            lightboxLinks.forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    img.src = link.href;
+                    lightboxOverlay.style.display = "flex";
+                });
+            });
+
+        // Event: Close the lightbox when clicking the close button
+            closeBtn.addEventListener("click", () => {
+                lightboxOverlay.style.display = "none";
+            });
+
+        // Event: Close the lightbox when clicking outside the image
+            lightboxOverlay.addEventListener("click", (e) => {
+                if (e.target === lightboxOverlay) {
+                    lightboxOverlay.style.display = "none";
+                }
+            });
+        });
+    </script>
+    <div class="masonry">
+        <div class="item">
+            <a href="/pirenily-2024/static/asset/images/self/1A.jpg" class="lightbox">
+                <img src="/pirenily-2024/static/asset/images/self/1A.jpg" alt="1A">
+            </a>
+        </div>
+        <div class="item">
+            <a href="/pirenily-2024/static/asset/images/self/1B.jpg" class="lightbox">
+                <img src="/pirenily-2024/static/asset/images/self/1B.jpg" alt="1B">
+            </a>
+        </div>
+        <div class="item">
+            <a href="/pirenily-2024/static/asset/images/self/1C.jpg" class="lightbox">
+                <img src="/pirenily-2024/static/asset/images/self/1C.jpg" alt="1C">
+            </a>
+        </div>
+        <div class="item">
+            <a href="/pirenily-2024/static/asset/images/self/2A.jpg" class="lightbox">
+                <img src="/pirenily-2024/static/asset/images/self/2A.jpg" alt="2A">
+            </a>
+        </div>
+        <div class="item">
+            <a href="/pirenily-2024/static/asset/images/self/2B.jpg" class="lightbox">
+                <img src="/pirenily-2024/static/asset/images/self/2B.jpg" alt="2B">
+            </a>
+        </div>
+        <div class="item">
+            <a href="/pirenily-2024/static/asset/images/self/2C.jpg" class="lightbox">
+                <img src="/pirenily-2024/static/asset/images/self/2C.jpg" alt="2C">
+            </a>
+        </div>
+        <div class="item">
+            <a href="/pirenily-2024/static/asset/images/self/3A.jpg" class="lightbox">
+                <img src="/pirenily-2024/static/asset/images/self/3A.jpg" alt="3A">
+            </a>
+        </div>
+        <div class="item">
+            <a href="/pirenily-2024/static/asset/images/self/3B.jpg" class="lightbox">
+                <img src="/pirenily-2024/static/asset/images/self/3B.jpg" alt="3B">
+            </a>
+        </div>
+        <div class="item">
+            <a href="/pirenily-2024/static/asset/images/self/3C.jpg" class="lightbox">
+                <img src="/pirenily-2024/static/asset/images/self/3C.jpg" alt="3C">
+            </a>
+        </div>
+
+
+
+    </div>
+
+
+        </main>
+        <footer>
+            
+            <p></p>
+            Chi (Tue) Le | pirenily | Updated 2024
+        </footer>
+
+        <script>
+            // Script for the loader to load on every new page for at least 0.4s
+            document.addEventListener("DOMContentLoaded", () => {
+                const loader = document.querySelector('.loader-container');
+
+                function showLoader() {
+                    loader.classList.remove('hidden');
+                }
+
+                function hideLoader() {
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                    }, 400); // Minimum delay to show the loader
+                }
+
+                document.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const url = link.getAttribute('href');
+
+                        // Skip lightbox links
+                        if (link.classList.contains('lightbox')) {
+                            return; // Ignore loader for lightbox
+                        }
+
+                        // Check if the link is internal (same origin or relative URL)
+                        const isInternal = url && (url.startsWith('/') || url.startsWith(window.location.origin));
+
+                        if (isInternal) {
+                            showLoader();
+                        } else {
+                            e.preventDefault(); // Optional: prevent external links from triggering loader
+                            window.location.href = url; // Redirect to external site without showing the loader
+                        }
+                    });
+                });
+
+                // Hide the loader after the page fully loads
+                window.addEventListener('load', hideLoader);
+
+                // Reset the loader when navigating back
+                window.addEventListener('pageshow', (event) => {
+                    if (event.persisted) {
+                        loader.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>

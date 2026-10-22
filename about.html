@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Pirenily | Meet Chi</title>
+        <!-- Import necessary fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+        <link href="/pirenily-2024/static/favicon.ico" rel="icon">
+        <link href="/pirenily-2024/static/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <div class="loader-container">
+            <img src="/pirenily-2024/static/asset/images/other/loader.gif" alt="Loading...">
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <nav class="navigator">
+                <div class="nav-header">
+                    <a class="nav-header" href="/pirenily-2024/"> Pirenily </a>
+                </div>
+                <div class="nav-item-big">
+                    <a class="nav-item" href="about"> About </a>
+                    <a class="nav-item" href="collab"> Collaborative Work </a>
+                    <a class="nav-item" href="personal"> Personal Work </a>
+                    <a class="nav-item" href="client"> Commissions </a>
+                </div>
+            </nav>
+            
+<!--- Navigation page for personal information --->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.image');
+            const body = document.body;
+
+            images.forEach(image => {
+                image.addEventListener('mouseenter', () => {
+                // Create a new pop-up image
+                    const popup = document.createElement('div');
+                    popup.classList.add('popup-image');
+                    popup.style.backgroundImage = image.style.backgroundImage;
+
+                // Create a temporary image element to get its natural dimensions
+                    const img = new Image();
+                    img.src = image.style.backgroundImage.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+
+                    img.onload = () => {
+                    // Calculate dimensions based on original aspect ratio
+                        const maxWidth = 300; // Maximum width for the pop-up
+                        const scaleFactor = maxWidth / img.naturalWidth;
+
+                        const width = img.naturalWidth * scaleFactor;
+                        const height = img.naturalHeight * scaleFactor;
+
+                        popup.style.width = `${width}px`;
+                        popup.style.height = `${height}px`;
+
+                    // Generate random position
+                        const randomX = Math.random() * (window.innerWidth - width);
+                        const randomY = Math.random() * (window.innerHeight - height);
+                        popup.style.left = `${randomX}px`;
+                        popup.style.top = `${randomY}px`;
+
+                    // Add the pop-up to the body
+                        body.appendChild(popup);
+                    };
+
+                // Remove the pop-up when the mouse leaves the original image
+                    image.addEventListener('mouseleave', () => {
+                        popup.remove();
+                    });
+                });
+            });
+        });
+    </script>
+    <div class="bio-container">
+    <!-- Picture on the left side -->
+        <img class="bio-image" src="/pirenily-2024/static/asset/images/other/Headshot_Chi Le.jpg" alt="biopic">
+        <div class="bio-text">
+            <h2>My name is Lê Tuệ Chi or Chi Le.</h2>
+            <h2>I am a self-taught illustrator and graphic designer based in Cambridge, MA.</h2>
+            <p></p>
+            <p>
+                My passion for film and installation art grows within my identity: <em>pirenily</em>. I use pirenily as a vessel of self-expression: through graphic design, photography, and storyboards. My main interests lie in the construction of interdependence: of time depiction through visual effects, of the existence of the multiverse through doors-and-paths-related design, and of myself as a locus of socialization. Every form of visual presentation on this website is mainly experimented, taken, edited, scripted, and modeled by me.
+            </p>
+            <p>
+                I spent my K-12 education in Hanoi, Vietnam which ended in my graduation from <a href="https://flss.vnu.edu.vn/nu-sinh-chuyen-ngoai-ngu-trung-tuyen-dai-hoc-harvard/">Foreign Language Specialized School</a>. Most of my collaborative work in high school was devoted to the International Vietnam Model UN, Recit Studio, and CNN English Club.
+            </p>
+            <p>
+                I am currently a freshman at Harvard College with undecided major declaration, but I am mainly looking into a concentration in <a href="https://seas.harvard.edu/electrical-engineering/bachelors-degree-electrical-engineering">Computer and Electrical Engineering</a> and a secondary in <a href="https://afvs.fas.harvard.edu/undergraduate-secondary-field">Art, Film, and Visual Studies</a>. I am a part of <a href="https://hudc.carrd.co/">Harvard Undergraduate Design Collectives</a> and <a href="https://www.hcapconference.org/">Harvard Undergraduate in Asia Program</a>.
+            </p>
+        </div>
+    <!-- Pictures on the right side -->
+        <div class="image-container">
+            <div class="image" style="background-image: url('/pirenily-2024/static/asset/images/self/blackswan.jpg');"></div>
+            <div class="image" style="background-image: url('/pirenily-2024/static/asset/images/self/glasses.jpg');"></div>
+            <div class="image" style="background-image: url('/pirenily-2024/static/asset/images/self/rebel.jpg');"></div>
+            <div class="image" style="background-image: url('/pirenily-2024/static/asset/images/self/sis.jpg');"></div>
+            <div class="image" style="background-image: url('/pirenily-2024/static/asset/images/self/story.jpg');"></div>
+            <div class="image" style="background-image: url('/pirenily-2024/static/asset/images/self/wow.jpg');"></div>
+        </div>
+
+
+    </div>
+
+
+        </main>
+        <footer>
+            
+<!-- Contact information -->
+    <a href="https://www.instagram.com/pju_irza/" target="_blank" style="text-decoration: none">
+        <img src="/pirenily-2024/static/asset/images/other/ig.png" alt="Instagram" class="contact-logo">
+    </a>
+
+    <a href="mailto:letuechi.2006@gmail.com" target="_blank" style="text-decoration: none">
+        <img src="/pirenily-2024/static/asset/images/other/mail.png" alt="Gmail" class="contact-logo">
+    </a>
+
+    <a href="https://www.linkedin.com/in/chi-tue-le-214705320/" target="_blank" style="text-decoration: none">
+        <img src="/pirenily-2024/static/asset/images/other/linkedin.png" alt="Gmail" class="contact-logo">
+    </a>
+
+            <p></p>
+            Chi (Tue) Le | pirenily | Updated 2024
+        </footer>
+
+        <script>
+            // Script for the loader to load on every new page for at least 0.4s
+            document.addEventListener("DOMContentLoaded", () => {
+                const loader = document.querySelector('.loader-container');
+
+                function showLoader() {
+                    loader.classList.remove('hidden');
+                }
+
+                function hideLoader() {
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                    }, 400); // Minimum delay to show the loader
+                }
+
+                document.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const url = link.getAttribute('href');
+
+                        // Skip lightbox links
+                        if (link.classList.contains('lightbox')) {
+                            return; // Ignore loader for lightbox
+                        }
+
+                        // Check if the link is internal (same origin or relative URL)
+                        const isInternal = url && (url.startsWith('/') || url.startsWith(window.location.origin));
+
+                        if (isInternal) {
+                            showLoader();
+                        } else {
+                            e.preventDefault(); // Optional: prevent external links from triggering loader
+                            window.location.href = url; // Redirect to external site without showing the loader
+                        }
+                    });
+                });
+
+                // Hide the loader after the page fully loads
+                window.addEventListener('load', hideLoader);
+
+                // Reset the loader when navigating back
+                window.addEventListener('pageshow', (event) => {
+                    if (event.persisted) {
+                        loader.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>

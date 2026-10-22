@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Pirenily | Collaboration</title>
+        <!-- Import necessary fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+        <link href="/pirenily-2024/static/favicon.ico" rel="icon">
+        <link href="/pirenily-2024/static/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <div class="loader-container">
+            <img src="/pirenily-2024/static/asset/images/other/loader.gif" alt="Loading...">
+        </div>
+
+        <!-- Main Content -->
+        <main>
+            <nav class="navigator">
+                <div class="nav-header">
+                    <a class="nav-header" href="/pirenily-2024/"> Pirenily </a>
+                </div>
+                <div class="nav-item-big">
+                    <a class="nav-item" href="about"> About </a>
+                    <a class="nav-item" href="collab"> Collaborative Work </a>
+                    <a class="nav-item" href="personal"> Personal Work </a>
+                    <a class="nav-item" href="client"> Commissions </a>
+                </div>
+            </nav>
+            
+<!--- Subnavigation page for displaying project --->
+    <div class="bio-container">
+
+    <!-- Embedded film on the left -->
+        <iframe class="video" src="https://drive.google.com/file/d/1CsplL9OtJk5-JYb_Mf8M-UASSZJsbVxD/preview" width="640" height="480" allow="autoplay"></iframe>
+        <div class="bio-text" style="text-align:left;">
+            <h2>WITHIN THE UNSEEN DREAM.</h2>
+            <h2>GIỮA CƠN MƠ VÔ HÌNH</h2>
+            <p>Ngày hôm ấy, bố dạy con những động tác võ ở phía sân sau, trông con như thể một chiến sĩ nhỏ! Ngày hôm ấy, mẹ cầm tay con đi về dọc con đường đê sau ngày dài trên trường mẫu giáo. Ngày hôm ấy, gia đình chúng ta cùng ngồi bên nhau, thưởng thức mâm cơm đầm ấm với những món ăn dân dã mẹ làm, như là rau muống chấm nước mắm, là đậu rán, là bát cà muối ăn cùng cơm.
+                Ấy vậy mà, con nhận ra, tất cả cũng chỉ là “Ngày hôm ấy”... Giá như, con có thể thay đổi một chữ cái, “ấy” thành “nay”.
+                Có lẽ, kí ức vốn sẽ giữ nguyên ý nghĩa, mà con chẳng thể dùng sức mạnh để biến nó thành hai chữ “hiện thực”. Nhưng giờ đây, con nhận ra điều quan trọng hơn cả - ta cần đón nhận và sống vì những hạnh phúc của thực tại và tương lai.
+            </p>
+            <p>
+                Bộ phim ngắn “Giữa cơn mơ vô hình” chính thức công chiếu ngày 26.08.2023. Hãy theo dõi trang chủ Recít để cập nhật thông tin sớm nhất về buổi chiếu phim sắp tới!
+            </p>
+        </div>
+        <div></div>
+    </div>
+
+        </main>
+        <footer>
+            
+<!-- Contact information for the studio -->
+    <a href="https://www.instagram.com/recit.stu/" target="_blank" style="text-decoration: none">
+        <img src="/pirenily-2024/static/asset/images/other/ig.png" alt="Instagram" class="contact-logo">
+    </a>
+
+    <a href="mailto:recitfilmmaking@gmail.com" target="_blank" style="text-decoration: none">
+        <img src="/pirenily-2024/static/asset/images/other/mail.png" alt="Gmail" class="contact-logo">
+    </a>
+
+    <a href="https://www.facebook.com/recit.stu" target="_blank" style="text-decoration: none">
+        <img src="/pirenily-2024/static/asset/images/other/fb.png" alt="Facebok" class="contact-logo">
+    </a>
+
+            <p></p>
+            Chi (Tue) Le | pirenily | Updated 2024
+        </footer>
+
+        <script>
+            // Script for the loader to load on every new page for at least 0.4s
+            document.addEventListener("DOMContentLoaded", () => {
+                const loader = document.querySelector('.loader-container');
+
+                function showLoader() {
+                    loader.classList.remove('hidden');
+                }
+
+                function hideLoader() {
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                    }, 400); // Minimum delay to show the loader
+                }
+
+                document.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const url = link.getAttribute('href');
+
+                        // Skip lightbox links
+                        if (link.classList.contains('lightbox')) {
+                            return; // Ignore loader for lightbox
+                        }
+
+                        // Check if the link is internal (same origin or relative URL)
+                        const isInternal = url && (url.startsWith('/') || url.startsWith(window.location.origin));
+
+                        if (isInternal) {
+                            showLoader();
+                        } else {
+                            e.preventDefault(); // Optional: prevent external links from triggering loader
+                            window.location.href = url; // Redirect to external site without showing the loader
+                        }
+                    });
+                });
+
+                // Hide the loader after the page fully loads
+                window.addEventListener('load', hideLoader);
+
+                // Reset the loader when navigating back
+                window.addEventListener('pageshow', (event) => {
+                    if (event.persisted) {
+                        loader.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>
