@@ -2,8 +2,8 @@
 <html lang="en">
 
     <head>
-        <link href="/pirenily-2024/static/favicon.ico" rel="icon">
-        <link href="/pirenily-2024/static/styles.css" rel="stylesheet">
+        <link href="/1st-prototype/static/favicon.ico" rel="icon">
+        <link href="/1st-prototype/static/styles.css" rel="stylesheet">
         <title>Pirenily</title>
         <script type="text/javascript">
             // Change the placeholder text every 3 seconds
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let page = pages.includes(q) ? q : null;
         for (const [words, target] of groups) if (!page && words.includes(q)) page = target;
         if (!page) page = random[Math.floor(Math.random() * random.length)];
-        location.href = "/pirenily-2024/" + page;
+        location.href = "/1st-prototype/" + page;
     });
 });
 </script>
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div id="video-container">
             <!--- Video will be used if the screen is big enough, otherwise a static image --->
             <video autoplay muted loop id="background-video">
-                <source src="/pirenily-2024/static/asset/images/other/BG.mp4" type="video/mp4">
+                <source src="/1st-prototype/static/asset/images/other/BG.mp4" type="video/mp4">
             </video>
         </div>
 
